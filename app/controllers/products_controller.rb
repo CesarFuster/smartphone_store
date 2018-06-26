@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  caches_action :index, layout: false, expires_in: 5.minutes
 
   # GET /products
   # GET /products.json
